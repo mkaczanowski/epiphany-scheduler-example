@@ -70,7 +70,7 @@ int main(void) {
         *execution_counter += 1;
 
         // update service state
-        e_write((void*)&emem, (void*) &service, 0, 0, NULL, sizeof(service_t));
+        e_write((void*)&emem, (void*) &service, 0, 0, (*service_id) * sizeof(service_t), sizeof(service_t));
     }
 
     return EXIT_SUCCESS;
